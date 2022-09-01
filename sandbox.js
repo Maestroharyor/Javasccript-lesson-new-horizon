@@ -53,6 +53,9 @@ todoForm.addEventListener("submit", (e) => {
 todosList.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.parentElement.remove();
-    // e.target.parentElement.remove();
+  } else if (e.target.classList.contains("edit")) {
+    const todoEdit = e.target.parentElement.parentElement.textContent.trim();
+    todoInput.value = todoEdit;
+    e.target.parentElement.parentElement.remove();
   }
 });
