@@ -5,8 +5,9 @@
 4. Events and some events examples
 5. Submit event
 6. Adding input todo list
-7. Delete todo list
-8. Edit todo list
+7. Event Propagation (bubbling and capturing)
+8. Delete todo list
+9. Edit todo list
 */
 
 // Querying DOM elements
@@ -24,20 +25,15 @@ const todoListAppend = (todo) => {
             <span>${todo}</span>
 
             <div>
-              <button
-                class="mr-2 bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition duration-300 ease-in-out delete_button"
-              >
-                <i class="fa-solid fa-trash"></i>
-              </button>
-              <button
-                class="hover:text-gray-100 transition duration-300 ease-in-out edit_buttom"
-              >
-                <i class="fa-solid fa-pen-to-square"></i>
-              </button>
+              
+                <i class="fa-solid fa-trash mr-2 bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600 transition duration-300 ease-in-out delete cursor-pointer"></i>
+
+                <i class="fa-solid fa-pen-to-square hover:text-gray-100 transition duration-300 ease-in-out edit cursor-pointer"></i>
+              
             </div>
           </li>`;
 
-  todosList.innerHTML = listTemplate;
+  todosList.innerHTML += listTemplate;
 };
 
 // Add event listeners
@@ -45,7 +41,18 @@ const todoListAppend = (todo) => {
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const newTodo = todoInput.value;
-  todoListAppend(newTodo);
+  if (newTodo.trim().length) {
+    todoListAppend(newTodo);
+  } else {
+    alert("Add an item to continue");
+  }
 
   todoForm.reset();
+});
+
+todosList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    e.target.parentElement.parentElement.remove();
+    // e.target.parentElement.remove();
+  }
 });
