@@ -5,43 +5,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Javascript</title>
+    <title>Quiz Application</title>
   </head>
   <body class="bg-gray-600">
     <!-- Title Section -->
     <div class="py-10">
-      <h1 class="text-4xl font-bold text-center text-white">To-do List App</h1>
+      <h1 class="text-4xl font-bold text-center text-white">My Quiz App</h1>
     </div>
 
-    <!-- Main To dos Section -->
-    <main class="max-w-[800px] mx-auto" id="mainElement">
-      <!-- Form -->
-      <form id="todoForm" class="flex flex-col mb-10">
-        <input
-          type="text"
-          class="text-2xl py-2 px-5 rounded-t todo_input"
-          name="todo_input"
-        />
-        <button
-          type="submit"
-          class="text-white bg-green-500 py-3 px-5 text-center text-xl rounded-b hover:bg-green-600 transition duration-300 ease-in-out"
-        >
-          Add Todo
-        </button>
-        <!-- <input type="submit" value="submit" /> -->
-      </form>
-
-      <!-- Todo Lists -->
-      <div>
-        <ul class="flex flex-col gap-5 todos"></ul>
+    <!-- Main Quiz Section -->
+    <main class="max-w-[800px] mx-auto bg-blue-900" id="mainElement">
+      <div
+        class="score_section text-3xl py-4 px-5 text-center text-white bg-blue-500"
+      >
+        <p>You scored <span class="actual_score">0% </span> of 100</p>
       </div>
+      <!-- Form -->
+      <form id="quizForm" class="flex flex-col mb-10 py-5 px-8 text-white">
+        <div class="mb-5">
+          <p class="text-xl mb-1.5 font-bold">What capital of Nigeria?</p>
+          <div>
+            <input
+              type="radio"
+              value="lagos"
+              name="question1"
+              id="question1a"
+            />
+            <label for="question1a" class="cursor-pointer">Lagos</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="abuja"
+              name="question1"
+              id="question1b"
+            />
+            <label for="question1b" class="cursor-pointer">Abuja</label>
+          </div>
+        </div>
+        <div class="mb-5">
+          <p class="text-xl mb-1.5 font-bold">
+            What is the largest country in the world?
+          </p>
+          <div>
+            <input
+              type="radio"
+              value="russia"
+              name="question2"
+              id="question2a"
+            />
+            <label for="question2a" class="cursor-pointer">Russia</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="scotland"
+              name="question2"
+              id="question2b"
+            />
+            <label for="question2b" class="cursor-pointer">Scotland</label>
+          </div>
+        </div>
+        <div class="mb-5">
+          <p class="text-xl mb-1.5 font-bold">
+            What is the capital of Iceland?
+          </p>
+          <div>
+            <input
+              type="radio"
+              value="lagos"
+              name="question3"
+              id="question3a"
+            />
+            <label for="question3a" class="cursor-pointer">Reykjavík</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="abuja"
+              name="question3"
+              id="question3b"
+            />
+            <label for="question3b" class="cursor-pointer">Sokoto</label>
+          </div>
+        </div>
+        <div class="mb-5">
+          <p class="text-xl mb-1.5 font-bold">
+            Name one landlocked country in Europe
+          </p>
+          <div>
+            <input
+              type="radio"
+              value="luxembourg"
+              name="question4"
+              id="question4a"
+            />
+            <label for="question4a" class="cursor-pointer">Luxembourg</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="south-africa"
+              name="question4"
+              id="question4b"
+            />
+            <label for="question4b" class="cursor-pointer">South Africa</label>
+          </div>
+        </div>
+        <div class="mb-5">
+          <p class="text-xl mb-1.5 font-bold">
+            Which planet is closest to the sun?
+          </p>
+          <div>
+            <input
+              type="radio"
+              value="mercury"
+              name="question5"
+              id="question5a"
+            />
+            <label for="question5a" class="cursor-pointer">Mercury</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="earth"
+              name="question5"
+              id="question5b"
+            />
+            <label for="question5b" class="cursor-pointer">Earth</label>
+          </div>
+        </div>
+
+        <div>
+          <button
+            class="bg-slate-800 py-2 px-5 text-center rounded border-2 border-white hover:bg-slate-900 transition duration-300 ease-in-out w-full"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
     </main>
 
     <script src="sandbox.js"></script>
