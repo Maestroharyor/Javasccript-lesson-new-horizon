@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Quiz Application</title>
   </head>
-  <body class="bg-gray-600">
+  <body class="bg-gray-600 scroll-smooth">
     <!-- Title Section -->
     <div class="py-10">
       <h1 class="text-4xl font-bold text-center text-white">My Quiz App</h1>
@@ -141,6 +141,12 @@
             class="submit bg-slate-800 py-2 px-5 text-center rounded border-2 border-white hover:bg-slate-900 transition duration-300 ease-in-out w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-slate-800"
           >
             Submit
+          </button>
+          <button
+            type="button"
+            class="reset bg-green-800 py-2 px-5 text-center rounded border-2 border-white hover:bg-green-900 transition duration-300 ease-in-out w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-slate-800 mt-5 hidden"
+          >
+            Play Again
           </button>
         </div>
       </form>

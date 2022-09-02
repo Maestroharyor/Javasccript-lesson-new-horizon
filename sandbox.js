@@ -13,6 +13,7 @@ const quizApp = document.querySelector("form");
 const scoreSection = document.querySelector(".score_section");
 const actualScore = document.querySelector(".actual_score");
 const submitButton = document.querySelector("button.submit");
+const resetButton = document.querySelector("button.reset");
 
 // Declare my variables and data
 const correctAnswers = [
@@ -49,7 +50,8 @@ quizApp.addEventListener("submit", (e) => {
   scrollTo(0, 0);
 
   scoreSection.classList.remove("hidden");
-  // actualScore.innerHTML = `${score}%`;
+
+  // actualScore.textContent = `${score}%`;
   let scoreOutput = 0;
   const quizAnimation = setInterval(() => {
     actualScore.textContent = `${scoreOutput}%`;
@@ -62,4 +64,11 @@ quizApp.addEventListener("submit", (e) => {
 
   quizApp.reset();
   submitButton.setAttribute("disabled", "disabled");
+  resetButton.classList.remove("hidden");
+});
+
+resetButton.addEventListener("click", () => {
+  scoreSection.classList.add("hidden");
+  submitButton.removeAttribute("disabled");
+  resetButton.classList.add("hidden");
 });
